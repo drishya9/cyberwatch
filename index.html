@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore vulnerability intelligence from FIRST EPSS and CISA KEV with CyberWatch.">
+    <title>
+      CyberWatch — Vulnerability Intelligence
+    </title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer>
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#workspace">
+      Skip to dashboard
+    </a>
+    <aside class="sidebar">
+      <a class="brand" href="#workspace">
+        <span class="brand-mark" aria-hidden="true">
+          C
+          <span>
+            W
+          </span>
+        </span>
+        <span>
+          CyberWatch
+          <small>
+            CVE RESEARCH WORKSPACE
+          </small>
+        </span>
+      </a>
+      <p class="nav-label">
+        WORKSPACE
+      </p>
+      <nav aria-label="Main navigation">
+        <a href="#workspace">
+          <span aria-hidden="true">
+            ◈
+          </span>
+          Overview
+        </a>
+        <a href="#watchlist-section">
+          <span aria-hidden="true">
+            ☆
+          </span>
+          Watchlist
+          <span id="nav-count" class="count">
+            0
+          </span>
+        </a>
+        <a href="#method">
+          <span aria-hidden="true">
+            ☷
+          </span>
+          How it works
+        </a>
+        <a href="#usage">
+          <span aria-hidden="true">?</span>
+          How to use
+        </a>
+      </nav>
+      <div class="sidebar-bottom">
+        <span class="source-dot">
+        </span>
+        PUBLIC DATA SOURCES
+        <p>
+          FIRST EPSS + CISA KEV
+        </p>
+        <small>
+          Local watchlist · No account required.
+        </small>
+      </div>
+    </aside>
+    <main id="workspace">
+      <header class="topbar">
+        <span>
+          WORKSPACE
+          <span class="slash">
+            /
+          </span>
+          Overview
+        </span>
+        <div class="topbar-actions">
+          <a href="#usage">How to use ↗</a>
+        <span class="project-tag">
+          PROJECT 03
+          <span>
+            API EXPLORER
+          </span>
+        </span>
+        </div>
+      </header>
+      <section class="hero" aria-labelledby="hero-title">
+        <div>
+          <p class="eyebrow">
+            <span class="source-dot">
+            </span>
+            VULNERABILITY INTELLIGENCE
+          </p>
+          <h1 id="hero-title">
+            Vulnerability
+            <br>
+            <span>
+              intelligence.
+            </span>
+          </h1>
+          <p class="hero-copy">
+            Look up exploitation probability, check CISA’s catalog,
+            <br>
+            and keep a personal vulnerability watchlist.
+          </p>
+        </div>
+        <div class="radar" aria-hidden="true">
+          <div class="radar-sweep">
+          </div>
+          <span class="radar-point one">
+          </span>
+          <span class="radar-point two">
+          </span>
+          <span class="radar-point three">
+          </span>
+          <span class="radar-center">
+            CW
+          </span>
+        </div>
+      </section>
+      <section class="search-panel panel" aria-labelledby="search-heading">
+        <div class="section-heading">
+          <h2 id="search-heading">
+            Investigate a vulnerability
+          </h2>
+          <span class="tiny-label">
+            01 / LOOKUP
+          </span>
+        </div>
+        <form id="search-form">
+          <label for="cve-input">
+            CVE identifier
+          </label>
+          <div class="search-row">
+            <span class="input-symbol" aria-hidden="true">
+              ⌕
+            </span>
+            <input id="cve-input" type="text" placeholder="e.g. CVE-2021-44228" autocomplete="off" spellcheck="false" aria-describedby="input-hint" required>
+            <button id="search-button" type="submit">
+              Analyze CVE
+              <span aria-hidden="true">
+                ↗
+              </span>
+            </button>
+          </div>
+          <p id="input-hint" class="muted">
+            Use the format CVE-YYYY-NNNN. The final number can have more than four digits.
+          </p>
+        </form>
+        <div class="examples">
+          <span>
+            Try an example
+          </span>
+          <button type="button" data-cve="CVE-2021-44228">
+            Log4Shell
+            <span>
+              ↗
+            </span>
+          </button>
+          <button type="button" data-cve="CVE-2023-34362">
+            MOVEit
+            <span>
+              ↗
+            </span>
+          </button>
+          <button type="button" data-cve="CVE-2024-3094">
+            XZ Utils
+            <span>
+              ↗
+            </span>
+          </button>
+        </div>
+        <p id="status" role="status" aria-live="polite">
+          Ready when you are. Enter a CVE to begin.
+        </p>
+      </section>
+      <details id="example-library" class="panel example-library">
+        <summary>Browse 16 example CVEs <span>Choose a case <span aria-hidden="true">+</span></span></summary>
+        <p class="muted">Well-known cases for practice, not a representative sample of all vulnerabilities. Select any entry to run a live lookup. Scores can change.</p>
+        <div class="example-grid">
+          <button type="button" data-cve="CVE-2021-44228">
+            <span class="example-id">CVE-2021-44228</span>
+            <span class="example-product">Apache / Log4j2</span>
+          </button>
+          <button type="button" data-cve="CVE-2023-34362">
+            <span class="example-id">CVE-2023-34362</span>
+            <span class="example-product">Progress / MOVEit Transfer</span>
+          </button>
+          <button type="button" data-cve="CVE-2024-3094">
+            <span class="example-id">CVE-2024-3094</span>
+            <span class="example-product">XZ Utils</span>
+          </button>
+          <button type="button" data-cve="CVE-2024-3400">
+            <span class="example-id">CVE-2024-3400</span>
+            <span class="example-product">Palo Alto Networks / PAN-OS</span>
+          </button>
+          <button type="button" data-cve="CVE-2024-21887">
+            <span class="example-id">CVE-2024-21887</span>
+            <span class="example-product">Ivanti / Connect Secure and Policy Secure</span>
+          </button>
+          <button type="button" data-cve="CVE-2023-4966">
+            <span class="example-id">CVE-2023-4966</span>
+            <span class="example-product">Citrix / NetScaler ADC and NetScaler Gateway</span>
+          </button>
+          <button type="button" data-cve="CVE-2023-22515">
+            <span class="example-id">CVE-2023-22515</span>
+            <span class="example-product">Atlassian / Confluence Data Center and Server</span>
+          </button>
+          <button type="button" data-cve="CVE-2022-40684">
+            <span class="example-id">CVE-2022-40684</span>
+            <span class="example-product">Fortinet / Multiple Products</span>
+          </button>
+          <button type="button" data-cve="CVE-2021-34527">
+            <span class="example-id">CVE-2021-34527</span>
+            <span class="example-product">Microsoft / Windows</span>
+          </button>
+          <button type="button" data-cve="CVE-2021-26855">
+            <span class="example-id">CVE-2021-26855</span>
+            <span class="example-product">Microsoft / Exchange Server</span>
+          </button>
+          <button type="button" data-cve="CVE-2020-0796">
+            <span class="example-id">CVE-2020-0796</span>
+            <span class="example-product">Microsoft / SMBv3</span>
+          </button>
+          <button type="button" data-cve="CVE-2019-0708">
+            <span class="example-id">CVE-2019-0708</span>
+            <span class="example-product">Microsoft / Remote Desktop Services</span>
+          </button>
+          <button type="button" data-cve="CVE-2017-5638">
+            <span class="example-id">CVE-2017-5638</span>
+            <span class="example-product">Apache / Struts</span>
+          </button>
+          <button type="button" data-cve="CVE-2017-0144">
+            <span class="example-id">CVE-2017-0144</span>
+            <span class="example-product">Microsoft / SMBv1</span>
+          </button>
+          <button type="button" data-cve="CVE-2014-6271">
+            <span class="example-id">CVE-2014-6271</span>
+            <span class="example-product">GNU / Bourne-Again Shell (Bash)</span>
+          </button>
+          <button type="button" data-cve="CVE-2014-0160">
+            <span class="example-id">CVE-2014-0160</span>
+            <span class="example-product">OpenSSL / OpenSSL</span>
+          </button>
+        </div>
+      </details>
+      <div id="empty-state" class="empty-state">
+        <span aria-hidden="true">
+          ◎
+        </span>
+        <div>
+          <h2>
+            No vulnerability selected
+          </h2>
+          <p>
+            Enter a CVE above to compare EPSS and known-exploitation data.
+          </p>
+        </div>
+        <span class="tiny-label">
+          AWAITING INPUT
+        </span>
+      </div>
+      <section id="results" hidden aria-labelledby="results-heading">
+        <div class="result-heading">
+          <div>
+            <p class="eyebrow">
+              INTELLIGENCE PROFILE
+            </p>
+            <h2 id="results-heading">
+              <span id="result-cve">
+              </span>
+            </h2>
+            <p id="result-name" class="muted">
+            </p>
+          </div>
+          <button id="save-button" type="button" class="secondary" disabled>
+            ☆ Save to watchlist
+          </button>
+        </div>
+        <div class="metrics">
+          <article class="panel metric score-card">
+            <p class="metric-label">
+              EXPLOITATION PROBABILITY
+              <span>
+                01
+              </span>
+            </p>
+            <div class="score-layout">
+              <div id="score-ring" class="score-ring" aria-hidden="true">
+                <span>
+                  EPSS
+                </span>
+              </div>
+              <div>
+                <p id="result-probability" class="metric-value">
+                </p>
+                <p class="muted">
+                  Estimated over the next 30 days
+                </p>
+              </div>
+            </div>
+            <div class="metric-foot">
+              FIRST EPSS
+              <span>
+                Score date:
+                <span id="result-date">
+                </span>
+              </span>
+            </div>
+          </article>
+          <article class="panel metric">
+            <p class="metric-label">
+              KNOWN EXPLOITATION
+              <span>
+                02
+              </span>
+            </p>
+            <span class="metric-icon" aria-hidden="true">
+              ◇
+            </span>
+            <p id="result-kev" class="metric-value smaller">
+            </p>
+            <p id="kev-explanation" class="muted">
+            </p>
+            <div class="metric-foot">
+              CISA KEV
+              <span id="catalog-date">
+              </span>
+            </div>
+          </article>
+          <article class="panel metric">
+            <p class="metric-label">
+              EPSS PERCENTILE
+              <span>
+                03
+              </span>
+            </p>
+            <p id="result-percentile" class="metric-value">
+            </p>
+            <div class="percentile-track" aria-hidden="true">
+              <span id="percentile-fill">
+              </span>
+            </div>
+            <p class="muted">
+              Relative score ranking, not another exploitation probability.
+            </p>
+            <div class="metric-foot">
+              FIRST EPSS
+              <span>
+                Higher = higher rank
+              </span>
+            </div>
+          </article>
+        </div>
+        <article id="priority-panel" class="priority-panel" data-level="unknown">
+          <span class="priority-symbol" aria-hidden="true">
+            !
+          </span>
+          <div>
+            <p class="eyebrow">
+              CYBERWATCH RECOMMENDATION
+            </p>
+            <h3 id="result-priority">
+            </h3>
+            <p id="priority-reason">
+            </p>
+          </div>
+          <span class="tiny-label">
+            CUSTOM RULES
+          </span>
+        </article>
+        <article id="kev-details" class="panel details-panel" hidden>
+          <div class="section-heading">
+            <h3>
+              CISA catalog context
+            </h3>
+            <span class="tiny-label">
+              SOURCE DETAILS
+            </span>
+          </div>
+          <p id="kev-description">
+          </p>
+          <dl class="context-grid">
+            <div>
+              <dt>
+                Vendor / product
+              </dt>
+              <dd id="kev-product">
+              </dd>
+            </div>
+            <div>
+              <dt>
+                Added to catalog
+              </dt>
+              <dd id="kev-added">
+              </dd>
+            </div>
+          </dl>
+          <p class="action-label">
+            CISA REQUIRED ACTION
+          </p>
+          <p id="kev-action">
+          </p>
+        </article>
+      </section>
+      <section id="watchlist-section" class="panel watchlist-panel" aria-labelledby="watchlist-heading">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">
+              SAVED INVESTIGATIONS
+            </p>
+            <h2 id="watchlist-heading">
+              Your watchlist
+              <span id="watchlist-count" class="count">
+                0
+              </span>
+            </h2>
+          </div>
+          <button id="export-button" type="button" class="secondary" disabled>
+            ↓ Export CSV
+          </button>
+        </div>
+        <p class="muted">
+          Saved in this browser. Recheck any CVE to retrieve its latest available intelligence.
+        </p>
+        <p id="watchlist-message" role="status">
+        </p>
+        <p id="watchlist-empty" class="watchlist-empty">
+          ☆   No saved vulnerabilities yet. Analyze a CVE and save it here.
+        </p>
+        <details id="export-preview" class="export-preview" hidden>
+        <summary>CSV export ready — download or copy</summary>
+        <label for="csv-content">Saved CVE IDs as CSV</label>
+        <textarea id="csv-content" rows="5" readonly></textarea>
+        <a id="csv-download" class="secondary" download="cyberwatch-watchlist.csv">Download CSV</a>
+      </details>
+      <ul id="watchlist">
+        </ul>
+      </section>
+      <details id="usage" class="panel usage-guide">
+        <summary>
+          How to use CyberWatch
+          <span>Quick start <span aria-hidden="true">+</span></span>
+        </summary>
+        <div class="usage-content">
+          <p class="muted">You need an internet connection for lookups. Your watchlist stays in this browser; no sign-in is needed.</p>
+          <ol class="usage-steps">
+            <li>
+              <h3>Search a vulnerability</h3>
+              <p>Enter a CVE identifier such as <code>CVE-2021-44228</code> and select <strong>Analyze CVE</strong>, or press Enter. You can also choose one of the example buttons. Wait for the lookup to finish.</p>
+            </li>
+            <li>
+              <h3>Read the evidence</h3>
+              <p><strong>EPSS probability</strong> estimates exploitation likelihood over the next 30 days. <strong>Percentile</strong> is the score’s relative rank, not another probability. <strong>Known exploited</strong> means CISA lists this CVE. Check the score and catalog dates.</p>
+            </li>
+            <li>
+              <h3>Understand the recommendation</h3>
+              <p>High, Medium, and Lower are CyberWatch’s custom review categories. Open <a href="#method">Behind the recommendation</a> for the thresholds. Missing sources are marked unavailable; a low score or “Not listed” does not establish safety.</p>
+            </li>
+            <li>
+              <h3>Save and revisit</h3>
+              <p>Select <strong>Save to watchlist</strong> after a lookup. Refreshing keeps saved IDs, not the result cards. Choose <strong>Recheck</strong> to load an ID again, or <strong>Remove</strong> to delete it from your list. Duplicate saves are prevented.</p>
+            </li>
+            <li>
+              <h3>Export your watchlist</h3>
+              <p>Select <strong>Export CSV</strong> to create a file containing your saved IDs. A copyable preview also appears. If your browser blocks the automatic download, use <strong>Download CSV</strong> or copy the text. Open the CSV in a spreadsheet or text editor.</p>
+            </li>
+            <li>
+              <h3>Handle a missing result</h3>
+              <p>A format warning means you should check the ID. No EPSS record means the ID has no returned score; it may lack coverage or may not exist. Partial results mean one source failed. Check your connection and retry; requests stop waiting after 15 seconds.</p>
+            </li>
+          </ol>
+          <div class="usage-tip"><strong>About saved data</strong><p>The watchlist belongs to this browser and page address. Clearing browser storage, using private browsing, or switching browsers or preview addresses can give you a different list. If storage is blocked, the app explains that changes will last only until refresh.</p></div>
+        </div>
+      </details>
+      <details id="method" class="panel method">
+        <summary>
+          Behind the recommendation
+          <span>
+            Understand the rules
+            <span aria-hidden="true">
+              +
+            </span>
+          </span>
+        </summary>
+        <div class="method-content">
+          <div>
+            <strong>
+              01 · Collect
+            </strong>
+            <p>
+              Fetch public JSON from FIRST EPSS and CISA’s official KEV mirror. Each source is handled independently.
+            </p>
+          </div>
+          <div>
+            <strong>
+              02 · Evaluate
+            </strong>
+            <p>
+              High: CISA-listed or EPSS ≥ 10%. Medium: not listed and EPSS ≥ 1%. Lower: not listed and EPSS &lt; 1%. Missing evidence is labeled incomplete or insufficient.
+            </p>
+          </div>
+          <div>
+            <strong>
+              03 · Remember
+            </strong>
+            <p>
+              Store CVE IDs with localStorage. No account or server database is needed. Scores are retrieved again when you recheck.
+            </p>
+          </div>
+          <p class="method-note">
+            These are custom student-project rules, not official severity ratings. A low score or absence from KEV does not establish safety. EPSS estimates probability, not impact.
+          </p>
+        </div>
+      </details>
+      <footer>
+        <span class="footer-brand">
+          CyberWatch
+          <span>
+            /
+          </span>
+          Web Systems · API project
+        </span>
+        <span>
+          DATA BY
+          <a href="https://www.first.org/epss/">
+            FIRST EPSS ↗
+          </a>
+          <a href="https://github.com/cisagov/kev-data">
+            CISA KEV ↗
+          </a>
+        </span>
+      </footer>
+    </main>
+  </body>
+</html>
